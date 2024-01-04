@@ -1,5 +1,4 @@
 import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
-
 import type { Config } from '../../payload/payload-types'
 import { ORDERS } from '../_graphql/orders'
 import { PAGES } from '../_graphql/pages'
@@ -22,9 +21,8 @@ const queryMap = {
     key: 'Orders',
   },
   categories: {
-    query: CATEGORIES,
-    key: 'Categories'
-  }
+    key: 'Categories',
+  },
 }
 
 export const fetchDocs = async <T>(

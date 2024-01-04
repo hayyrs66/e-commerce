@@ -1,43 +1,39 @@
-"use client"
+'use client'
 
 import classes from './index.module.scss'
 import { useState, useEffect } from 'react'
 
-
 function Promotion() {
-    const [time, setTime] = useState({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-    })
+  const [time, setTime] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
 
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 7)
+  const targetDate = new Date()
+  targetDate.setDate(targetDate.getDate() + 7)
 
-    useEffect(() => {
-        const timerInterval = setInterval(() => {
-            const currentTime = new Date();
-            const timeDifference =  Math.max(Number(targetDate) - Number(currentTime), 0)
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      const currentTime = new Date()
+      const timeDifference = Math.max(Number(targetDate) - Number(currentTime), 0)
 
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
 
-            setTime({days, hours, minutes, seconds})
-            
-            if(timeDifference === 0) clearInterval(timerInterval)
-        }, 1000)
+      setTime({ days, hours, minutes, seconds })
 
-        return () => {
-            clearInterval(timerInterval)
-        }
-    }, [])
-    
-    
-    
-    
+      if (timeDifference === 0) clearInterval(timerInterval)
+    }, 1000)
+
+    return () => {
+      clearInterval(timerInterval)
+    }
+  }, [])
+
   return (
     <section className={classes.promotion}>
       <div className={classes.textBox}>

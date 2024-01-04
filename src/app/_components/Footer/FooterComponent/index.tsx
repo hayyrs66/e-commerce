@@ -1,5 +1,4 @@
 'use client'
-
 import { usePathname } from 'next/navigation'
 import { noHeaderFooterUrls, profileNavItems } from '../../../constants/index'
 import classes from './index.module.scss'
@@ -10,10 +9,10 @@ import Link from 'next/link'
 import { Footer } from '../../../../payload/payload-types'
 import { Button } from '../../Button'
 
-function FooterComponent({ footer } : {footer: Footer}) {
+function FooterComponent({ footer }: { footer: Footer }) {
   const pathname = usePathname()
 
-  const navItems = footer?.navItems || [];
+  const navItems = footer?.navItems || []
 
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
@@ -40,7 +39,7 @@ function FooterComponent({ footer } : {footer: Footer}) {
         <Gutter>
           <div className={classes.wrap}>
             <Link href="/">
-              <Image  src="/logo-white.svg" alt="logo" width={170} height={50} />
+              <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
             </Link>
             <p>{footer.copyright}</p>
             <div className={classes.socialLinks}>
@@ -49,17 +48,18 @@ function FooterComponent({ footer } : {footer: Footer}) {
 
                 return (
                   <Button
-                  key={item.link.label}
-                  el="link"
-                  href={item.link.url}
-                  newTab={true}
-                  className={classes.socialLinkItem}
+                    key={item.link.label}
+                    el="link"
+                    href={item.link.url}
+                    newTab={true}
+                    className={classes.socialLinkItem}
                   >
-                    <Image src={icon?.url} 
-                    alt={item.link.label}
-                    width={24}
-                    height={24}
-                    className={classes.socialIcon}
+                    <Image
+                      src={icon?.url}
+                      alt={item.link.label}
+                      width={24}
+                      height={24}
+                      className={classes.socialIcon}
                     />
                   </Button>
                 )

@@ -1,5 +1,4 @@
 'use client'
-
 import { Checkbox } from '../../../_components/CheckBox'
 import { Category } from '../../../../payload/payload-types'
 import { useFilter } from '../../../_providers/Filter'
@@ -11,16 +10,16 @@ function Filters({ categories }: { categories: Category[] }) {
   const { categoryFilters, sort, setCategoryFilters, setSort } = useFilter()
 
   const handleCategories = (categoryId: string) => {
-    if(categoryFilters.includes(categoryId)){
-      const updatedCategories = categoryFilters.filter((id) => id !== categoryId);
+    if (categoryFilters.includes(categoryId)) {
+      const updatedCategories = categoryFilters.filter(id => id !== categoryId)
 
       setCategoryFilters(updatedCategories)
-    } else{
+    } else {
       setCategoryFilters([...categoryFilters, categoryId])
     }
   }
 
-  const handleSort = (value: string) => setSort(value);
+  const handleSort = (value: string) => setSort(value)
 
   return (
     <div className={classes.filters}>
@@ -51,7 +50,7 @@ function Filters({ categories }: { categories: Category[] }) {
             onRadioChange={handleSort}
             groupName="sort"
           />
-            <RadioButton
+          <RadioButton
             label="Oldest"
             value="createdAt"
             isSelected={sort === 'createdAt'}

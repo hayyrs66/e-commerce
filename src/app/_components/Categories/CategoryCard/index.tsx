@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import Link from 'next/link'
 import { Category, Media } from '../../../../payload/payload-types'
@@ -21,7 +21,7 @@ function CategoryCard({ category }: CategoryCardProps) {
         backgroundImage: `url(${media.url})`,
       }}
       className={classes.card}
-      onClick={() => setCategoryFilters([category.id]) }
+      onClick={() => setCategoryFilters([category.id])}
     >
       <p className={classes.title}>{category.title}</p>
     </Link>

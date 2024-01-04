@@ -1,18 +1,11 @@
 'use client'
-
 import React, { Fragment } from 'react'
 import Link from 'next/link'
-
 import { Page, Settings } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
-import { HR } from '../../../_components/HR'
 import { LoadingShimmer } from '../../../_components/LoadingShimmer'
-import { Media } from '../../../_components/Media'
-import { Price } from '../../../_components/Price'
-import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
-
 import classes from './index.module.scss'
 import CartItem from '../CartItem'
 
