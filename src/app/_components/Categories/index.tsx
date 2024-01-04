@@ -4,8 +4,6 @@ import CategoryCard from './CategoryCard'
 import classes from './index.module.scss'
 
 function Categories({ categories }: { categories: Category[] }) {
-
-  
   return (
     <section className={classes.container}>
       <div className={classes.titleWrapper}>

@@ -1,13 +1,9 @@
 'use client'
-
 import React, { Fragment, useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import Link from 'next/link'
-
 import { Button } from '../../../_components/Button'
 import { Input } from '../../../_components/Input'
 import { Message } from '../../../_components/Message'
-
 import classes from './index.module.scss'
 
 type FormData = {
@@ -51,23 +47,23 @@ export const RecoverPasswordForm: React.FC = () => {
       {!success && (
         <React.Fragment>
           <p>Enter your registered email address. We'll send you a code to reset your password.</p>
-            <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
-              <Message error={error} className={classes.message} />
-              <Input
-                name="email"
-                label="Email Address"
-                required
-                register={register}
-                error={errors.email}
-                type="email"
-              />
-              <Button
-                type="submit"
-                appearance="primary"
-                label="Recover Password"
-                className={classes.submit}
-              />
-            </form>
+          <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+            <Message error={error} className={classes.message} />
+            <Input
+              name="email"
+              label="Email Address"
+              required
+              register={register}
+              error={errors.email}
+              type="email"
+            />
+            <Button
+              type="submit"
+              appearance="primary"
+              label="Recover Password"
+              className={classes.submit}
+            />
+          </form>
         </React.Fragment>
       )}
       {success && (
