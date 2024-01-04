@@ -24,7 +24,7 @@
   "dependencies": {
     "@payloadcms/bundler-webpack": "^1.0.0",
     "@payloadcms/db-mongodb": "^1.0.0",
-    "@payloadcms/plugin-cloud": "^0.0.1",
+    "@payloadcms/plugin-cloud-storage": "^1.1.1",
     "@payloadcms/plugin-nested-docs": "^1.0.8",
     "@payloadcms/plugin-redirects": "^1.0.0",
     "@payloadcms/plugin-seo": "^1.0.10",
@@ -73,6 +73,7 @@
     "typescript": "^4.8.4"
   },
   "resolutions": {
+    "payload": "^2.0.7",
     "jackspeak": "2.1.1"
   }
 }
