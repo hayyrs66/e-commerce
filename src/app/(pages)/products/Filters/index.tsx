@@ -1,12 +1,16 @@
 'use client'
-import { Checkbox } from '../../../_components/CheckBox'
+
+import React from 'react'
+
 import { Category } from '../../../../payload/payload-types'
-import { useFilter } from '../../../_providers/Filter'
-import classes from './index.module.scss'
+import { Checkbox } from '../../../_components/Checkbox'
 import { HR } from '../../../_components/HR'
 import { RadioButton } from '../../../_components/Radio'
+import { useFilter } from '../../../_providers/Filter'
 
-function Filters({ categories }: { categories: Category[] }) {
+import classes from './index.module.scss'
+
+const Filters = ({ categories }: { categories: Category[] }) => {
   const { categoryFilters, sort, setCategoryFilters, setSort } = useFilter()
 
   const handleCategories = (categoryId: string) => {
@@ -41,7 +45,7 @@ function Filters({ categories }: { categories: Category[] }) {
           })}
         </div>
         <HR className={classes.hr} />
-        <h6 className={classes.title}>Sort by</h6>
+        <h6 className={classes.title}>Sort By</h6>
         <div className={classes.categories}>
           <RadioButton
             label="Latest"

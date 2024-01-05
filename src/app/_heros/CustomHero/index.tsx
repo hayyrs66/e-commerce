@@ -15,13 +15,8 @@ export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) =
     `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${media.filename}`
 
   return (
-    <Gutter className={classes.hero}>
-      <div
-        className={classes.heroWrapper}
-        style={{
-          backgroundImage: `url(${mediaUrl})`,
-        }}
-      >
+    <section className={classes.hero}>
+      <div className={classes.heroWrapper} style={{ backgroundImage: `url(${mediaUrl})` }}>
         <div className={classes.heroTextBox}>
           <RichText content={richText} />
 
@@ -38,6 +33,6 @@ export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) =
           )}
         </div>
       </div>
-    </Gutter>
+    </section>
   )
 }

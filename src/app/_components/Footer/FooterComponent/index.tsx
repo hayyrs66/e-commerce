@@ -1,23 +1,26 @@
 'use client'
-import { usePathname } from 'next/navigation'
-import { noHeaderFooterUrls, inclusions } from '../../../constants/index'
-import classes from './index.module.scss'
-import { Gutter } from '../../Gutter'
+
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Footer } from '../../../../payload/payload-types'
+import { usePathname } from 'next/navigation'
+
+import { Footer, Media } from '../../../../payload/payload-types'
+import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../constants'
 import { Button } from '../../Button'
+import { Gutter } from '../../Gutter'
 
-function FooterComponent({ footer }: { footer: Footer }) {
+import classes from './index.module.scss'
+
+const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
-
   const navItems = footer?.navItems || []
 
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
       <Gutter>
         <ul className={classes.inclusions}>
-          {inclusions.map((inclusion, index) => (
+          {inclusions.map(inclusion => (
             <li key={inclusion.title}>
               <Image
                 src={inclusion.icon}
@@ -40,7 +43,9 @@ function FooterComponent({ footer }: { footer: Footer }) {
             <Link href="/">
               <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
             </Link>
-            <p>{footer.copyright}</p>
+
+            <p>{footer?.copyright}</p>
+
             <div className={classes.socialLinks}>
               {navItems.map(item => {
                 const icon = item?.link?.icon as Media

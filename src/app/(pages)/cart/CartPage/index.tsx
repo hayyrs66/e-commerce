@@ -1,13 +1,20 @@
 'use client'
+
 import React, { Fragment } from 'react'
 import Link from 'next/link'
+
 import { Page, Settings } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
+import { HR } from '../../../_components/HR'
 import { LoadingShimmer } from '../../../_components/LoadingShimmer'
+import { Media } from '../../../_components/Media'
+import { Price } from '../../../_components/Price'
+import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
-import classes from './index.module.scss'
 import CartItem from '../CartItem'
+
+import classes from './index.module.scss'
 
 export const CartPage: React.FC<{
   settings: Settings
@@ -50,7 +57,7 @@ export const CartPage: React.FC<{
           ) : (
             <div className={classes.cartWrapper}>
               <div>
-                {/* cart list header */}
+                {/* CART LIST HEADER */}
                 <div className={classes.header}>
                   <p>Products</p>
                   <div className={classes.headerItemDetails}>
@@ -60,7 +67,7 @@ export const CartPage: React.FC<{
                   </div>
                   <p className={classes.headersubtotal}>Subtotal</p>
                 </div>
-                {/* cart item list header */}
+                {/* CART ITEM LIST */}
                 <ul className={classes.itemsList}>
                   {cart?.items?.map((item, index) => {
                     if (typeof item.product === 'object') {
@@ -91,16 +98,19 @@ export const CartPage: React.FC<{
 
               <div className={classes.summary}>
                 <div className={classes.row}>
-                  <h6 className={classes.total}>Summary</h6>
+                  <h6 className={classes.cartTotal}>Summary</h6>
                 </div>
+
                 <div className={classes.row}>
-                  <p className={classes.total}>Delivery Charge</p>
-                  <p className={classes.total}>$0</p>
+                  <p className={classes.cartTotal}>Delivery Charge</p>
+                  <p className={classes.cartTotal}>$0</p>
                 </div>
+
                 <div className={classes.row}>
-                  <p className={classes.total}>Grand Total</p>
-                  <p className={classes.total}>{cartTotal.formatted}</p>
+                  <p className={classes.cartTotal}>Grand Total</p>
+                  <p className={classes.cartTotal}>{cartTotal.formatted}</p>
                 </div>
+
                 <Button
                   className={classes.checkoutButton}
                   href={user ? '/checkout' : '/login?redirect=%2Fcheckout'}

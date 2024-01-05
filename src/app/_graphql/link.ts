@@ -9,7 +9,7 @@ export const LINK_FIELDS = ({ disableAppearance, disableLabel }: Args = {}): str
   type
   newTab
   url
-  icon{
+  icon {
     url
   }
   reference {

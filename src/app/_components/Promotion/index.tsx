@@ -1,9 +1,9 @@
 'use client'
+import React, { useEffect, useState } from 'react'
 
 import classes from './index.module.scss'
-import { useState, useEffect } from 'react'
 
-function Promotion() {
+const Promotion = () => {
   const [time, setTime] = useState({
     days: 0,
     hours: 0,
@@ -12,7 +12,7 @@ function Promotion() {
   })
 
   const targetDate = new Date()
-  targetDate.setDate(targetDate.getDate() + 7)
+  targetDate.setDate(targetDate.getDate() + 3)
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -26,11 +26,14 @@ function Promotion() {
 
       setTime({ days, hours, minutes, seconds })
 
-      if (timeDifference === 0) clearInterval(timerInterval)
+      if (timeDifference === 0) {
+        clearInterval(timerInterval)
+        // You can add code here to handle what happens when the target date is reached.
+      }
     }, 1000)
 
     return () => {
-      clearInterval(timerInterval)
+      clearInterval(timerInterval) // Cleanup the interval when the component unmounts.
     }
   }, [])
 
@@ -40,7 +43,8 @@ function Promotion() {
         <h3 className={classes.title}>Deals of the Month</h3>
         <p>
           Get ready for a shopping experience like never before with our Deals of the Month! Every
-          purchase comes with exclusive perks and offers.
+          purchase comes with exclusive perks and offers, making this month a celebration of savvy
+          choices and amazing deals. Don't miss out! 🎁🛒
         </p>
 
         <ul className={classes.stats}>
