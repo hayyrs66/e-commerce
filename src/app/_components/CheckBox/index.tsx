@@ -2,14 +2,14 @@ import React, { ChangeEvent, useState } from 'react'
 
 import classes from './index.module.scss'
 
-interface CheckboxProps {
+interface CheckBox {
   label: string
   value: string
   isSelected: boolean
   onClickHandler: (value: string) => void
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({ label, value, isSelected, onClickHandler }) => {
+export const CheckBox: React.FC<CheckBox> = ({ label, value, isSelected, onClickHandler }) => {
   const [isChecked, setIsChecked] = useState(isSelected)
 
   const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {

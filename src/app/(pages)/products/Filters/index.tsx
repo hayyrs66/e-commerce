@@ -1,13 +1,10 @@
 'use client'
-
 import React from 'react'
-
 import { Category } from '../../../../payload/payload-types'
-import { Checkbox } from '../../../_components/Checkbox'
+import { CheckBox } from '../../../_components/CheckBox'
 import { HR } from '../../../_components/HR'
 import { RadioButton } from '../../../_components/Radio'
 import { useFilter } from '../../../_providers/Filter'
-
 import classes from './index.module.scss'
 
 const Filters = ({ categories }: { categories: Category[] }) => {
@@ -34,7 +31,7 @@ const Filters = ({ categories }: { categories: Category[] }) => {
             const isSelected = categoryFilters.includes(category.id)
 
             return (
-              <Checkbox
+              <CheckBox
                 key={category.id}
                 label={category.title}
                 value={category.id}
