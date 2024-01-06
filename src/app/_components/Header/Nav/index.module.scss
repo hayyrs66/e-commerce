@@ -4,13 +4,40 @@
   display: flex;
   gap: calc(var(--base) / 4) var(--base);
   align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
   opacity: 1;
   transition: opacity 100ms linear;
   visibility: visible;
 
   > * {
     text-decoration: none;
+  }
+}
+
+
+.nav_2 {
+  display: flex;
+  gap: calc(var(--base) / 4) var(--base);
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 100ms linear;
+  visibility: visible;
+
+  > * {
+    text-decoration: none;
+  }
+
+  .btn{
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s cubic-bezier(.3,.2,.2,.8);
+
+    &:hover{
+      background-color: var(--color-base-700);
+    }
+    
   }
 }
 

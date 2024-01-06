@@ -1,23 +1,18 @@
 export const inclusions = [
   {
-    title: 'Free Shipping',
-    description: 'Free shipping for order above $150',
-    icon: '/assets/icons/shipping.svg',
+    title: 'Complimentary Shipping',
+    description: 'Enjoy free shipping on U.S. orders over $100.',
+    icon: '/assets/icons/box.svg',
   },
   {
-    title: 'Money Guarantee',
-    description: 'Within 30 days for an exchange',
-    icon: '/assets/icons/dollar.svg',
+    title: 'Consciously Crafted',
+    description: 'Designed with you and the planet in mind.',
+    icon: '/assets/icons/hanger.svg',
   },
   {
-    title: 'Online Support',
-    description: '24 hours a day, 7 days a week',
-    icon: '/assets/icons/support.svg',
-  },
-  {
-    title: 'Flexible Payment',
-    description: 'Pay with multiple credit cards',
-    icon: '/assets/icons/payment.svg',
+    title: 'Come Say Hi',
+    description: 'We have 11 stores across the U.S.',
+    icon: '/assets/icons/spot.svg',
   },
 ]
 

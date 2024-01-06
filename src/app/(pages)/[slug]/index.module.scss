@@ -1,12 +1,5 @@
 @import '../../_css/queries.scss';
 
-.home {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  margin-top: 100px;
-
-  @include mid-break {
-    gap: 60px;
-  }
+.padding{
+  padding: 5.625rem 4rem;
 }

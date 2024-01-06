@@ -10,10 +10,8 @@ const Categories = ({ categories }: { categories: Category[] }) => {
   return (
     <section className={classes.container}>
       <div className={classes.titleWrapper}>
-        <h3>Shop by Categories</h3>
-        <Link href="/products">Show All</Link>
+        <h3>Shop by Category</h3>
       </div>
-
       <div className={classes.list}>
         {categories.map(category => {
           return <CategoryCard key={category.id} category={category} />

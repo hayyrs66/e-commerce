@@ -3,12 +3,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
 }
 
 .titleWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   h3 {
@@ -18,9 +17,9 @@
 
 .list {
   display: grid;
-  gap: 30px;
-  padding: 0;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.563rem 0;
+  grid-template-columns: repeat(5, 1fr);
 
   @include small-break {
     grid-template-columns: 1fr;

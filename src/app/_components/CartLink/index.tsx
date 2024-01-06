@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import { useCart } from '../../_providers/Cart'
-
+import { LuShoppingCart } from 'react-icons/lu'
 import classes from './index.module.scss'
 
 export const CartLink: React.FC<{
@@ -21,7 +21,7 @@ export const CartLink: React.FC<{
   return (
     <Link className={[classes.cartLink, className].filter(Boolean).join(' ')} href="/cart">
       <Fragment>
-        Cart
+      <LuShoppingCart size={22}/>
         {typeof length === 'number' && length > 0 && (
           <small className={classes.quantity}>({length})</small>
         )}
