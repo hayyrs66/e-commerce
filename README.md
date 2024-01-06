@@ -21,5 +21,7 @@ SCSS: The SCSS CSS preprocessor is used to maintain modular, organized, and easy
 Stripe: Integration of Stripe for secure and efficient payment processing.
 ## Screenshots 📸
 
+
+
 ![App Screenshot](public/screenshot.png)
 
